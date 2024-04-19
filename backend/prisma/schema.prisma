@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @map("_id")
+  username String
+  gameId   String  @map("game_id")
+}
+
+model Game {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  playerOne String? @map("player_one")
+  playerTwo String? @map("player_two")
+  available Boolean
+  scoreId   String? @db.ObjectId
+}
+
+model Score {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  playerOneClick String[]
+  playerTwoClick String[]
+  playerOneScore Int      @default(0)
+  playerTwoScore Int      @default(0)
+  gameId         String   @db.ObjectId
+}
+
+model Rematch {
+	id             String   @id @default(auto()) @map("_id") @db.ObjectId
+	gameId         String   @db.ObjectId
+	rematch        Boolean
+}

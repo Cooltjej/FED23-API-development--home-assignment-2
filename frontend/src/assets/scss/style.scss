@@ -1,0 +1,213 @@
+@import "bootstrap/scss/bootstrap";
+
+/* lobby */
+.body {
+  background-image: url(virus.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+#user {
+  border: solid;
+  background-color: rgb(211, 255, 144);
+  font-size: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#gamebutton {
+  background-color: rgb(18, 247, 14);
+  border: solid black;
+  font-size: 1.5rem;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+}
+
+@keyframes textColorChange {
+  0% {
+    color: #000000;
+  }
+  50% {
+    color: rgb(18, 247, 14);
+  }
+  100% {
+    color: #000000;
+  }
+}
+
+.animate-text {
+  animation: textColorChange 1.5s infinite;
+}
+
+#highscore {
+  height: 27rem;
+  border: solid;
+  background-color: rgb(211, 255, 144);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+#gamerules {
+  height: 27rem;
+  border: solid;
+  background-color: rgb(151, 235, 25);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+#gametext {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+}
+
+#gameplayed {
+  height: 27rem;
+  border: solid;
+  background-color: rgb(211, 255, 144);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.4rem;
+}
+
+/* Maingame */
+
+#maingame {
+  display: block;
+}
+
+.gamebody {
+  background-image: url(virus.jpg);
+  background-size: cover;
+}
+
+#gamecontainer {
+  height: 100vh;
+}
+
+#gameboard {
+  height: 100vh;
+  border: solid;
+  background-color: rgb(225, 255, 203);
+}
+
+#gametitle {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3rem;
+}
+
+#scoreboard {
+  border: solid;
+}
+
+#scoreboardframe {
+  border: solid;
+}
+
+#scoreboardtext {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  background-color: rgb(225, 255, 203);
+  border: solid;
+}
+
+#virustext {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  background-color: rgb(225, 255, 203);
+  border: solid;
+}
+
+#roundcountertext {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  background-color: rgb(225, 255, 203);
+  border: solid;
+}
+
+#playerOneBoard {
+  background-color: rgb(225, 255, 203);
+  margin-top: 2rem;
+  border: solid;
+}
+
+#player1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  height: 4rem;
+}
+
+#playerTwoBoard {
+  background-color: rgb(225, 255, 203);
+  margin-top: 0.5rem;
+  border: solid;
+}
+
+#player2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  height: 4rem;
+}
+
+.spelplan {
+  background-color: rgb(225, 255, 203);
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 10px;
+  border: 2px solid rgb(17, 116, 9);
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  height: 150px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.virus {
+  background-size: 150px;
+  background-image: url("https://i.imgur.com/myXZLGp.png");
+}
+
+.mega-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 50%;
+  background-color: antiquewhite;
+  opacity: 60%;
+}
+
+#modal {
+  display: none;
+}
+
+#waiting {
+  display: none;
+}
+
+.modal {
+  &-container {
+    opacity: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50%;
+    height: 20%;
+    border-radius: 10px;
+    border: 3px solid green;
+  }
+
+  &-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+}

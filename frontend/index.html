@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/😎" />
+    <link
+      rel="stylesheet"
+      href="/fed23-fed23-api-grupp-10/frontend/src/assets/scss/style.scss"
+    />
+    <title>FED23 API-utveckling Realtime Frontend</title>
+  </head>
+  <body>
+    <!-- lobby -->
+    <div class="body">
+      <div id="modal">        
+        <div class="mega-modal">
+        </div>
+        <div class="modal-container">
+          <div class="modal-body">
+            <div>
+              <span id="score">
+              </span>
+            </div>
+            <div>
+              <span>
+                Do you want to play again?
+              </span>
+              <div>
+                <button id="yes">YAAAS</button>
+                <button id="no">NOPE</button>
+                <div id="waiting">
+                  Waiting...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="app"></div>
+      <form id="startGameForm">
+        <div class="container justify-content-center">
+          <div class="row">
+            <div class="col-12 mt-3 text-center">
+              <input type="text" placeholder="Enter your name" id="user" />
+            </div>
+          </div>
+        </div>
+        <div class="container justify-content-center">
+          <div class="row">
+            <div class="col-12 mt-2 text-center">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg mt-3 mx-auto"
+                id="gamebutton"
+              >
+                Start Game
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="container justify-content-center">
+        <div class="row">
+          <div class="col-3 mt-5 d-flex">
+            <div class="container" id="highscore">
+              <div class="row">
+                <div class="col-12 text-center p-1">Highscore</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 offset-1 mt-5 d-flex">
+            <div class="container" id="gamerules">
+              <div class="row">
+                <div class="col-12 text-center p-1">Game rules</div>
+                <p id="gametext">
+                  Click the virus on the game board as fast as you can to score
+                  points against your opponent.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 offset-1 mt-5 d-flex">
+            <div class="container" id="gameplayed">
+              <div class="row">
+                <div class="col-12 text-center p-1">Last Games played</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Maingame -->
+      <div class="gamebody" id="maingame">
+        <div class="container-fluid" id="gamecontainer">
+          <div class="row">
+            <div class="col-8">
+              <div class="container p-2" id="gameboard">
+                <div class="game-info">
+                </div>
+                <h1 id="gametitle">Virus Game</h1>
+                <div class="spelplan">
+                  <div class="square" id="square1"><p></p></div>
+                  <div class="square" id="square2"><p></p></div>
+                  <div class="square" id="square3"><p></p></div>
+                  <div class="square" id="square4"><p></p></div>
+                  <div class="square" id="square5"><p></p></div>
+                  <div class="square" id="square6"><p></p></div>
+                  <div class="square" id="square7"><p></p></div>
+                  <div class="square" id="square8"><p></p></div>
+                  <div class="square" id="square9"><p></p></div>
+                </div>
+              </div>
+            </div>
+            <!-- scoreboard -->
+            <div class="col-4">
+              <div class="container p-2" id="scoreboardframe">
+                <div class="container" id="scoreboardtext">
+                  <div class="row">
+                    <div class="col-12 text-center p-1">Scoreboard</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Virus timer -->
+                <!-- <div class="col-6" id="virustime">
+                  <div class="container p-2" id="virustext">
+                    
+                  </div>
+                </div> -->
+                <!-- Round counter -->
+                <div class="col-6" >
+                  <div class="container p-2" id="roundcountertext">
+                    <div class="container" id="roundcounterboard">
+                      <div class="col-12 text-center p-1" id="roundcounter">1/10</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- PlayerOneBoard -->
+              <div class="container p-5" id="playerOneBoard">
+                <div class="container" id="player1">
+                  <div class="row">
+                    <!-- left side -->
+                    <div class="col-3">
+                      <span id="player1Score"></span>
+                    </div>
+                    <!-- right side -->
+                    <div class="col-3">
+                      <span id="usernameplayer1"></span>
+                      <span id="Timeplayer1"></span>
+                      <div class="container" id="virustimeboard1">
+                        <div class="col-3 text-center p-1" id="virustimerlabel">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- PlayerTwoBoard -->
+              <div class="container p-5" id="playerTwoBoard">
+                <div class="container" id="player2">
+                  <div class="row">
+                    <!-- left side -->
+                    <div class="col-3">
+                      <span id="player2Score"></span>
+                    </div>
+                    <!-- right side -->
+                    <div class="col-3">
+                      <span id="usernameplayer2"></span>
+                      <span id="Timeplayer2"></span>
+                      <div class="container" id="virustimeboard2">
+                        <div class="col-3 text-center p-1" id="virustimerlabel">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+
+</html>
